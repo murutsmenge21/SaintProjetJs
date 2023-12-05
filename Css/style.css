@@ -1,0 +1,234 @@
+/* global style */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;  
+}
+
+body{
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+  
+}
+
+/* nav style */
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff000;
+    color:#000000;
+    height: 80px;
+   
+}
+
+nav .nav-menu{
+    display: flex;
+    list-style: none;
+}
+
+nav .nav-menu li a{
+    display:inline-block;
+    padding: 15px;
+    text-decoration: none;
+    text-transform: uppercase;;
+    font-size: 1 rem;  
+    color:#000000;
+    letter-spacing: 1.5px;
+}
+
+nav .logo{
+    color: #000000;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin:6px;
+    font-size: 25px;
+    cursor: pointer; 
+}
+nav .nav-menu .close-menu , nav .hamBurger ,  .icons i{
+    font-size: 2rem;
+    display: none;
+    cursor:pointer;
+}
+
+
+
+
+nav .nav-menu li a:hover{
+    background: hotpink;
+}
+
+
+.fa-facebook:hover{color:rgb(0,110,255)}
+.fa-instagram:hover{color:rgb(228, 24, 126)}
+.fa-twitter:hover{color:rgb(0,110,255)}
+.fa-github:hover{color:rgb(255, 255, 0)}
+
+
+
+
+
+
+/* main style */
+.bottom{
+    min-height: 100vh;
+}
+.row .banner-text{
+    width: 40%;
+    position: absolute;
+    top: 75%;
+    left: 65%;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #000000;
+    transform: translateY(-50%);
+}
+.banner-text #button{
+    width: 170px;
+    height: 40px;
+    color: #000000;
+    font-size: 12px;
+    background: #fff000;
+    border-radius: 23px;
+    cursor: pointer;
+    border: 0;
+    outline: none;
+    transition: transform 0.5s;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.banner-text #button:hover{
+    transform: translateX(30px);
+    color: hotpink;
+    background-color: purple;
+    border: 2px solid #000000;
+    transition: 0.6s;
+}
+
+.banner-clip-path{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(0 0, 20% 0, 40% 100%, 0 100%);
+    background-color: #da1414;
+    background-image: url(../image/logo_banner.png);
+    background-repeat: no-repeat;
+    background-position: 75px 200px;
+    z-index: 2;
+}
+
+/* Add these keyframes for the image slider */
+
+@keyframes changeImage{
+    0%, 100%{
+        background-image: url(../image/st-George\ bgc.webp);
+    }
+    20%, 80%{
+        background-image: url(../image/IMG_3.jpg);
+    }
+    40%,60%{
+        background-image: url(../image/IMG_9835-1024x683.jpg);
+    }
+}
+/* Apply the animation to the banner class */
+.banner{
+    background-size: cover;
+    background-position: center;
+    animation: changeImage 12s infinite;
+}
+
+
+
+/* for smaller screen */
+
+  @media(max-width:768px){
+    nav #login,  .banner-clip-path{
+       display: none;
+    }
+      nav .nav-menu{
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 10;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background:#fff000;
+        transition: top 1s ease;
+        display: none;
+    }  
+
+    nav .nav-menu .close-menu{
+        display: block;
+        position: absolute;
+        top: 20px;
+        right:5px
+    }
+    
+    nav .hamBurger{
+        display: block;
+    }
+    nav .nav-menu li a {
+        font-size: 1.2rem; /* Adjust the font size for better readability */
+    }
+
+    nav .nav-menu li a:hover{
+        background: none;
+        color: rgb(255, 123, 0);
+        font-size: 1.6rem;
+    }
+    .icons i {
+        display: inline-block;
+        padding: 12px;
+      
+    }
+    .icons i {
+        padding: 8px; /* Adjust the padding for better spacing */
+    }
+    .row .banner-text{
+        width: 80%;
+        position: absolute;
+        top: 75%;
+        left:10%;
+        font-size: 14px;
+        text-transform: uppercase;
+        color:#000000;
+        transform: translateY(-50%);
+      }
+
+      .banner {
+        background-size: 100% 100%; 
+        background-position: center;
+        animation: changeImage 12s infinite;
+    }
+  
+ 
+}  
+
+
+
+/* for extra smaller screen */
+@media (max-width: 480px) {
+    .banner {
+        background-size: 100% 100%;
+        background-position: center;
+        animation: changeImage 12s infinite;
+    }
+
+    .row .banner-text {
+        width: 90%; /* Adjust the width based on your design */
+        left: 5%;
+        font-size: 12px; /* Adjust the font size for better readability */
+    }
+
+    nav .nav-menu li a {
+        font-size: 1rem; /* Adjust the font size for better readability */
+    }
+
+    .icons i {
+        padding: 6px; /* Adjust the padding for better spacing */
+    }
+}
+

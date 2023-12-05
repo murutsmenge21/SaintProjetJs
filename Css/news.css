@@ -1,0 +1,157 @@
+/* global style */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;  
+}
+
+body{
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+  
+  
+}
+
+/* nav style */
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff000;
+    color:#000000;
+    height: 80px;
+   
+}
+
+nav .nav-menu{
+    display: flex;
+    list-style: none;
+}
+
+nav .nav-menu li a{
+    display:inline-block;
+    padding: 15px;
+    text-decoration: none;
+    text-transform: uppercase;;
+    font-size: 1 rem;  
+    color:#000000;
+    letter-spacing: 1.5px;
+}
+
+nav .logo{
+    color: #000000;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin:6px;
+    font-size: 25px;
+    cursor: pointer; 
+}
+nav .nav-menu .close-menu , nav .hamBurger ,  .icons i{
+    font-size: 2rem;
+    display: none;
+    cursor:pointer;
+}
+
+
+
+
+nav .nav-menu li a:hover{
+    background: hotpink;
+}
+
+
+
+/* Main styles */
+
+
+.news-item {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+}
+.row h2{
+    padding-top: 20px;
+}
+.news-container{
+    width: 100%;
+    height: 100vh;
+    background-color: #f2f2f3;
+}
+.news-item h3 {
+    color: #333;
+}
+
+.news-item p {
+    color: #555;
+    line-height: 1.6;
+}
+
+/* for smaller screen */
+
+@media(max-width:768px){
+    nav #login{
+       display: none;
+    }
+      nav .nav-menu{
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 10;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background:#fff000;
+        transition: top 1s ease;
+        display: none;
+    }  
+
+    nav .nav-menu .close-menu{
+        display: block;
+        position: absolute;
+        top: 20px;
+        right:5px
+    }
+    
+    nav .hamBurger{
+        display: block;
+    }
+    nav .nav-menu li a {
+        font-size: 1.2rem; /* Adjust the font size for better readability */
+    }
+
+    nav .nav-menu li a:hover{
+        background: none;
+        color: rgb(255, 123, 0);
+        font-size: 1.6rem;
+    }
+    .icons i {
+        display: inline-block;
+        padding: 12px;
+      
+    }
+    .icons i {
+        padding: 8px; /* Adjust the padding for better spacing */
+    }
+    .row .banner-text{
+        width: 80%;
+        position: absolute;
+        top: 75%;
+        left:10%;
+        font-size: 14px;
+        text-transform: uppercase;
+        color:#000000;
+        transform: translateY(-50%);
+      }
+
+      .banner {
+        background-size: 100% 100%; 
+        background-position: center;
+        animation: changeImage 12s infinite;
+    }
+  
+ 
+} 
+
+
